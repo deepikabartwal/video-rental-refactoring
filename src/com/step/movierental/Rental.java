@@ -18,4 +18,26 @@ class Rental {
     Movie getMovie() {
         return movie;
     }
+
+    public double getRentalFees() {
+        double rentalAmount = 0;
+        switch (this.getMovie().getPriceCode()) {
+            case Movie.REGULAR:
+                rentalAmount = rentalAmount + 2;
+                if (this.daysRented > 2) {
+                    rentalAmount = rentalAmount + (this.daysRented - 2) * 1.5;
+                }
+                break;
+            case Movie.NEW_RELEASE:
+                rentalAmount = rentalAmount + (this.daysRented * 3);
+                break;
+            case Movie.CHILDRENS:
+                rentalAmount += 1.5;
+                if (this.daysRented > 3) {
+                    rentalAmount += (this.daysRented - 3) * 1.5;
+                }
+                break;
+        }
+        return rentalAmount;
+    }
 }
