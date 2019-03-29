@@ -1,26 +1,25 @@
 package com.step.movierental;
 
-import java.util.ArrayList;
-import java.util.Iterator;
+import java.util.*;
 
-public class Customer {
+class Customer {
 
 	private String name;
 	private ArrayList<Rental> rentalList = new ArrayList<Rental>();
 
-	public Customer(String name) {
+	Customer(String name) {
 		this.name = name;
 	}
 
-	public void addRental(Rental arg) {
+	void addRental(Rental arg) {
 		rentalList.add(arg);
 	}
 
-	public String getName() {
+	private String getName() {
 		return name;
 	}
 
-	public String statement() {
+	String statement() {
 		double totalAmount = 0;
 		int frequentRenterPoints = 0;
 		Iterator<Rental> rentals = rentalList.iterator();
