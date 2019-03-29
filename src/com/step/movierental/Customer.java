@@ -26,13 +26,11 @@ class Customer {
 
 		for (Rental rental : rentalList) {
 			totalAmount += rental.getRentalFees();
-			frequentRenterPoints++;
+			frequentRenterPoints += rental.calculateRenterPoints();
 
 			result += "\t" + rental.getMovie().getTitle() + "\t"
 					+ rental.getRentalFees() + "\n";
-			if ((rental.getMovie().getPriceCode() == Movie.NEW_RELEASE)
-					&& rental.getDaysRented() > 1)
-				frequentRenterPoints++;
+
 		}
 
 		// add footer lines
