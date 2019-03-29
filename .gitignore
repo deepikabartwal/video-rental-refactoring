@@ -1,0 +1,7 @@
+*.iml
+.DS_Store
+.classpath
+*.ipr
+*.iws
+out/
+.project
